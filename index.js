@@ -1,53 +1,56 @@
-const wash = document.getElementById('wash')
-const grass = document.getElementById('grass')
-const weeds = document.getElementById('weeds')
-const addService = []
-const addCost = []
+const listedChores = document.getElementById("listedChores")
+const sendBtn = document.getElementById('sendBtn')
+const addBtn = document.getElementById('addBtn')
+const totalBtn = document.getElementById('totalBtn')
+let numberInput = document.getElementById('number')
+let choreInput = document.getElementById('chore')
+let total = document.getElementById('total')
+let tasks = []
 
-//functions//
-function renderServices(){
-    document.getElementById('addServices').innerHTML = addService.join('')
+addBtn.addEventListener("click", function(){
+    let chore = choreInput.value
+    let amount = numberInput.value
+
+    if(!chore && !amount){
+        return;
+    }else{
+        tasks.push({
+           chore,amount
+        })
+    }
+    numberInput.value = ""
+    choreInput.value = ""
+    renderHTML()
+})
+
+
+function renderHTML(){
+    const chores = tasks.map(data => {
+        return `
+        <div id='chores'>
+        <p class="choreData"> ${data.chore}</p>
+        <p>${data.amount}</p>
+        </div>
+        `
+    }).join('')
+    listedChores.innerHTML = chores
 }
 
 function getTotal(){
-    let total = addCost.reduce(((a,b) => a+b),0)
-    document.getElementById('total').innerHTML = `<div>Total:</div> <div class = 'total'> $${total}</div>`
+const reducedTasks = tasks.reduce((acc, obj)=> acc + Number(obj.amount), 0)
+
+total.innerHTML = `
+<h3>Total Amount: $${reducedTasks} </h3>
+`
 }
 
-//adding functionality to the different buttons//
-wash.addEventListener('click',function(){
-    addCost.push(20)
-    addService.push(`<div class = 'choresCol'><h3 class = 'h3'>Wash Bathroom</h3> <p class = 'price'>20</p></div>`)
-    renderServices()
-    getTotal()
-    wash.disabled = true
+totalBtn.addEventListener("click", getTotal)
+
+sendBtn.addEventListener("click", function(){
+    listedChores.innerHTML = `<h3>Add a chore....</h3>`
+    total.innerHTML = ""
+    numberInput.value = ""
+    choreInput.value = ""
+    tasks=[]
+    alert("Invoice was sent")  
 })
-
-grass.addEventListener('click', function(){
-    addCost.push(15)
-    addService.push(`<div class = 'choresCol'><h3 class = 'h3'>Cut Grass</h3> <p class = 'price'>15</p></div>`)
-    renderServices()
-    getTotal()
-    grass.disabled = true
-})
-
-weeds.addEventListener('click', function(){
-    addCost.push(10)
-    addService.push(`<div class = 'choresCol'><h3 class = 'h3'>Pull Weeds</h3> <p class = 'price'>10</p></div>`)
-    renderServices()
-    getTotal()
-    weeds.disabled = true
-})
-
-
-//functionality of remove buttons -- need to fix it to my data.//
-function removeWeed() {
-    const index = serviceArr.indexOf(
-      `<div class="item"><p>Pull Weeds</p> <button class="idBtn" id="idBtn" onclick="removeWeed()">Remove</button> <p class="price"><span class="dollar">$</span>30</p></div>`
-    );
-    serviceArr.splice(index, 1);
-    valueArr.splice(index, 1);
-    displayService();
-    displayTotal();
-    weedBtn.disabled = false;
-  }
