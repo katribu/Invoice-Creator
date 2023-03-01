@@ -1,70 +1,87 @@
 html, body {
     padding: 0;
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: rgb(27, 26, 26);
 }
 
-body {
-    width: 40%;
+main {
+margin: 20px auto;
+background: rgb(56, 28, 56);
+color: whitesmoke;
+width: 500px;
+padding: 20px;
+border-radius: 10px;
 }
 
-
-.btnContainer {
-    margin-bottom: 20px;
+h1 {
+    margin-top: 0;
 }
 
-.btnStyle,
-.sendBtn {
+h3 {
+    text-align: center;
+}
+
+/*  BUTTON STYLES */
+button {
+    font-family: inherit;
+    font-weight: 800;
     padding: 8px 14px;
     font-size: 1em;
     border: none;
     border-radius: 3px;
     margin: 0 5px;
+    background:rgb(56, 28, 56);
+    color: whitesmoke;
 }
 
-.bthStyle:focus,
-.btnStyle:hover,
-.sendBtn:focus,
-.sendBtn:hover {
+.btnStyle {
+    background-color: black;
+}
+
+.btnStyle:hover {
+    background-color: rgb(56, 28, 56);
+}
+input {
+    font-family: inherit;
+    padding-left: 10px;
+    width: 170px;
+}
+
+.btnContainer {
+    margin-bottom: 20px;
+    background: rgb(132, 71, 132);
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+
+button:hover
+ {
     cursor: pointer;
     background-color: black;
     color: white;
+    transform: scale(1.10)
 }
 
-.choresCol {
- background-color: rgba(2,2,2,0.25);
- color: white;
- display: flex;
- /* border: solid 3px red; */
- width: 100%;
-}
-
-.price {
-    justify-items: center;
-    margin-left: 10em;
-    font-size: 1.25em;
-    text-align: left;
-    /* border: 3px black solid; */
-    width: 20%;
-}
-
-.h3 {
-    justify-items: center;
-    font-size: 1.25em;
-    width: 80%;
-}
-
-#total {
-    font-size: 1.75em;
-    display:flex;
+/* CHORE STYLES */
+#chores {
+    display: flex;
+    width: 60%;
+    margin: 10px auto;
     justify-content: space-between;
-    background-color: rgba(1,1,5,0.65);
 }
 
-.total {
-    margin-right: 37px;
+#chores p{
+    margin: 0;
 }
 
-.sendBtn {
-    margin-top: 20px;
-    text-align: center;
+.choreData {
+    flex: 1;
+}
+
+.lower {
+    width: 50%;
+    margin: 0 auto;
 }

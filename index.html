@@ -5,20 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = 'style.css' rel = 'stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Montserrat+Alternates:wght@900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
     <title>Invoice Creator</title>
 </head>
 <body>
+    <main id="main">
     <h1> Invoice</h1>
     <div class = 'btnContainer'>
-        <button class = 'btnStyle' id = 'wash'>Wash Bathroom</button>
-        <button id = 'grass' class = 'btnStyle'>Cut Grass</button>
-        <button id = 'weeds' class = 'btnStyle'>Pull Weeds</button>
+        <input id="chore" type='text' placeholder='Add chore'/>
+        <input id="number" type='number' placeholder='Amount($)'/>
+        <button id="addBtn">Add</button>
+    </div>  
+
+    <div id="listedChores">
+        <h3>Add a chore....</h3>
     </div>
 
-    <div id = 'addServices'></div>
-    <div id = 'total'></div>
-
-    <button class = 'sendBtn'>Send Invoice</button> 
+    <div id="total"></div>
+    <div class="btnContainer lower">
+        <button id="sendBtn" class="btnStyle">Send Invoice</button>
+        <button id="totalBtn">Total</button> 
+    </div>
+    </main>
 </body>
 <script src = 'index.js'></script>
 </html>
