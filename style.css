@@ -1,0 +1,70 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 40%;
+}
+
+
+.btnContainer {
+    margin-bottom: 20px;
+}
+
+.btnStyle,
+.sendBtn {
+    padding: 8px 14px;
+    font-size: 1em;
+    border: none;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.bthStyle:focus,
+.btnStyle:hover,
+.sendBtn:focus,
+.sendBtn:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.choresCol {
+ background-color: rgba(2,2,2,0.25);
+ color: white;
+ display: flex;
+ /* border: solid 3px red; */
+ width: 100%;
+}
+
+.price {
+    justify-items: center;
+    margin-left: 10em;
+    font-size: 1.25em;
+    text-align: left;
+    /* border: 3px black solid; */
+    width: 20%;
+}
+
+.h3 {
+    justify-items: center;
+    font-size: 1.25em;
+    width: 80%;
+}
+
+#total {
+    font-size: 1.75em;
+    display:flex;
+    justify-content: space-between;
+    background-color: rgba(1,1,5,0.65);
+}
+
+.total {
+    margin-right: 37px;
+}
+
+.sendBtn {
+    margin-top: 20px;
+    text-align: center;
+}
